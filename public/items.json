@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Watermelon juice",
+    "supplier-name": "Aman gupta",
+    "price": "$ 7",
+    "img": "https://i.ibb.co/yfnFYws/pexels-bruno-scramgnon-1337825.jpg",
+    "description": "Watermelon Shake Filled Glass Cup Beside Sliced Watermelon Fruit on Brown Surface"
+  },
+  {
+    "name": "LimeKiwi juice",
+    "supplier-name": "Anika roy",
+    "price": "$ 17",
+    "img": "https://i.ibb.co/Jr50HbD/pexels-caleb-oquendo-3038241.jpg",
+    "description": "A Glass Filled With Refreshing Juice Drink With Lime And Kiwi"
+  },
+  {
+    "name": "Mint leaves juice",
+    "supplier-name": "Monjoy",
+    "price": "$ 22",
+    "img": "https://i.ibb.co/NCHwCHR/pexels-artem-beliaikin-1322144.jpg",
+    "description": "Drinking Glass With Pink Beverage And Mint Leaves"
+  },
+  {
+    "name": "Orange Juice",
+    "supplier-name": "Durjoy",
+    "price": "$ 19",
+    "img": "https://i.ibb.co/WgkPLL8/pexels-markus-spiske-115832.jpg",
+    "description": "Orange Juice in Clear Drinking Glass"
+  },
+  {
+    "name": "Mango Juice",
+    "supplier-name": "Bijoy",
+    "price": "$ 15",
+    "img": "https://i.ibb.co/p2MKdFK/pexels-timur-weber-8679358.jpg",
+    "description": "A Slice of Mango Fruit And Glass of Juice On Wooden Chopping Board"
+  },
+  {
+    "name": "Cocktail Drink",
+    "supplier-name": "jakir babu",
+    "price": "$ 13",
+    "img": "https://i.ibb.co/47VhFpc/pexels-timur-weber-8679352.jpg",
+    "description": "Cocktail Drink In Clear Glass With Slice of Lemon"
+  }
+]

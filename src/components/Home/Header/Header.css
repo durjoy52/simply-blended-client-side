@@ -1,0 +1,11 @@
+.nav-bar {
+  background: #e6dde7;
+  font-weight: bold;
+}
+.inActive {
+  color: gray;
+}
+.active {
+  color: #a43539;
+  border-bottom: 2px;
+}
