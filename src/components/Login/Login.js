@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import SocialLogin from "../SocialLogin/SocialLogin";
 import './Login.css';
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -14,6 +15,7 @@ const Login = () => {
 
   return (
     <div className="Login">
+        <SocialLogin></SocialLogin>
       <Form onSubmit={handleSubmit}>
         <Form.Group size="lg" controlId="email">
           <Form.Label>Email</Form.Label>

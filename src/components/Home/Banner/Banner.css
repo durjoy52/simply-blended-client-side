@@ -1,0 +1,52 @@
+.banner-section {
+  height: 90vh;
+  position: relative;
+  content: "";
+  background-image: url("../../../images/background.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.banner-section::before {
+  content: "";
+  position: absolute;
+  opacity: 0.5;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+.banner-right {
+  max-width: 600px;
+}
+.banner-left {
+  position: relative;
+  text-align: left;
+  width: 600px;
+  padding: 0 2px;
+}
+.banner-left span {
+  color: crimson;
+  font-size: 20px;
+  font-weight: bold;
+}
+.banner-left button {
+  background-color: transparent;
+  padding: 7px 11px;
+  border-radius: 6px;
+  border-color: #d87093;
+}
+.banner-left button:hover {
+  background-color: #d87093;
+  color: #fff;
+}
+.banner-left h2 {
+  font-size: 40px;
+}
+.banner-left p {
+  font-size: 15px;
+}
+.carousel {
+  color: white;
+  font-weight: bold;
+}

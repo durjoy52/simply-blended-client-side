@@ -16,6 +16,7 @@ const Register = () => {
 
   return (
     <div className="Login">
+          <SocialLogin></SocialLogin>
       <Form onSubmit={handleRegister}>
         <Form.Group size="lg" controlId="name">
           <Form.Label>Name</Form.Label>
@@ -57,9 +58,8 @@ const Register = () => {
         <Button block size="lg" type="submit" className="my-2">
           SignUp
         </Button>
-      <p>Login your account <Link to='/login'>Sign-In</Link></p>
+      <p>Already have an account ? <Link to='/login'>Sign-In</Link></p>
       </Form>
-      <SocialLogin></SocialLogin>
     </div>
   );
 };
