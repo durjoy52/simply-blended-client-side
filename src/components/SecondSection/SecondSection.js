@@ -1,4 +1,5 @@
 import React from "react";
+import { AiOutlineArrowRight } from 'react-icons/ai';
 import "./SecondSection.css";
 const SecondSection = () => {
   return (
@@ -11,7 +12,8 @@ const SecondSection = () => {
         </p>
         <input type="email" name="email" placeholder="Enter your email" />
         <button>
-          <span>Subscribe</span>
+          <span>Subscribe</span> 
+          <AiOutlineArrowRight/>
         </button>
       </div>
     </div>

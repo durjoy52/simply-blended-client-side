@@ -1,5 +1,7 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
+import { AiOutlineHome } from 'react-icons/ai';
+import { BiLogInCircle } from 'react-icons/bi';
 import logo from '../../../images/logo/logo.png';
 import CustomLink from '../../CustomLink/CustomLink';
 import './Header.css';
@@ -13,11 +15,11 @@ const Header = () => {
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
-      <Nav.Link as={CustomLink} to='/'>Features</Nav.Link>
+      <Nav.Link as={CustomLink} to='/'><AiOutlineHome/>Home</Nav.Link>
       <Nav.Link as={CustomLink} to="/pricing">Pricing</Nav.Link>
     </Nav>
     <Nav>
-      <Nav.Link as={CustomLink} to="/login">Login</Nav.Link>
+      <Nav.Link as={CustomLink} to="/login"><BiLogInCircle/>Login</Nav.Link>
       <Nav.Link as={CustomLink}  to="/memes">
         Dank memes
       </Nav.Link>

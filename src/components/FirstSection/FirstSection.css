@@ -1,0 +1,12 @@
+.img-side img {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 15px;
+}
+.benefit h4 {
+  color: palevioletred;
+  font-size: 19px;
+}
+.benefit ul {
+  list-style: none;
+}
