@@ -58,7 +58,7 @@ const Register = () => {
         <Button block size="lg" type="submit" className="my-2">
           SignUp
         </Button>
-      <p>Already have an account ? <Link to='/login'>Sign-In</Link></p>
+      <p>Already have an account ? <Link to='/login'>Login</Link></p>
       </Form>
     </div>
   );

@@ -9,11 +9,11 @@ const SocialLogin = () => {
       </div>
       <div className="d-flex justify-content-center align-items-center">
         <div
-          style={{ width: "49%", height: "3px", backgroundColor: "#6495ed" }}
+          style={{ width: "15%", height: "2px", backgroundColor: "#6495ed" }}
         ></div>
         <p className="mx-1 mt-3">Or</p>
         <div
-          style={{ width: "49%", height: "3px", backgroundColor: "#6495ed" }}
+          style={{ width: "15%", height: "2px", backgroundColor: "#6495ed" }}
         ></div>
       </div>
     </div>
