@@ -51,3 +51,15 @@
   color: white;
   font-weight: bold;
 }
+
+.carousel-item::before {
+  content: "";
+  display: block;
+  position: absolute;
+  opacity: 0.5;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  background-color: rgba(0, 0, 0, 0.45);
+}
