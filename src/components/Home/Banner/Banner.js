@@ -5,12 +5,12 @@ import "./Banner.css";
 
 const Banner = () => {
   return (
-    <div className="banner-section flex-wrap d-flex justify-content-around align-items-center mb-3">
+    <div className="banner-section flex-wrap d-flex justify-content-around align-items-center mb-4">
       <div className="banner-left">
         <span>Healthy and Delicious Juices</span>
         <h2>Fulfill All Your Vitamin Needs By Drinking Juice</h2>
         <button>
-          Get started <BsFillArrowRightCircleFill />
+          <a href="#inventory">Get started <BsFillArrowRightCircleFill /></a>
         </button>
       </div>
       <div className="banner-right ">

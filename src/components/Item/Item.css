@@ -1,5 +1,11 @@
 .card {
   border: none;
   box-shadow: 0 0 5px 0 lightgrey;
-  margin: 0 auto;
+  width: 22rem;
+}
+
+@media screen and (min-width: 480px) {
+  .card {
+    width: 26rem;
+  }
 }

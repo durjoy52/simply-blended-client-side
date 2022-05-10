@@ -4,8 +4,8 @@ import './Item.css';
 const Item = ({ product }) => {
   const { name, price, quantity, img, description, supplierName } = product;
   return (
-    <div className="col-md-4">
-      <Card className="card" style={{ width: "18rem"}}>
+    <div className="col-md-6 col-lg-4 d-flex justify-content-center">
+      <Card className="card">
         <Card.Img variant="top" src={img} />
         <Card.Body>
           <Card.Title>Name: {name}</Card.Title>

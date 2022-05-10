@@ -35,11 +35,13 @@
   padding: 7px 11px;
   border-radius: 6px;
   border-color: #d87093;
-  color: #f5f5f5;
+}
+.banner-left button a {
+  color: #fff;
+  text-decoration: none;
 }
 .banner-left button:hover {
   background-color: #d87093;
-  color: #fff;
 }
 .banner-left h2 {
   font-size: 40px;

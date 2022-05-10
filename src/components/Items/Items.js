@@ -1,23 +1,21 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import toast from 'react-hot-toast';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Item from '../Item/Item';
+import useProduct from '../useProduct/useProduct';
 const Items = () => {
-    const [products,setProducts] = useState([])
-    useEffect(()=>{
-       (async()=>{
-        const {data} = await axios.get('http://localhost:5000/products')
-        if(!data?.success){
-            return toast.error(data?.error,{id:'error'})
-        }
-        setProducts(data?.data)
-       })()
-    },[])
+    const navigate = useNavigate()
+    const [products] = useProduct()
     return (
-        <div className='row mb-3 g-2'>
+        <div>
+            <h3 className='text-center'>Inventory</h3>
+            <div id='inventory' className='row mb-4 g-3'>
             {
-                products.map(product =><Item key={product._id} product={product}></Item>)
+                products.slice(0,6).map(product =><Item key={product._id} product={product}></Item>)
             }
+            <div className="d-flex justify-content-end">
+            <button onClick={()=>navigate('/manage')}>Manage Inventories</button>
+            </div>
+        </div>
         </div>
     );
 };
