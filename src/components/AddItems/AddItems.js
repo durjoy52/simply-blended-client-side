@@ -12,6 +12,7 @@ const AddItems = () => {
     const img = event.target.img.value;
 
     const user = { name, supplierName, description, quantity, price, img };
+    event.target.reset()
 
     const { data } = await axios.post("http://localhost:5000/products", user);
     console.log(data);
@@ -38,10 +39,10 @@ const AddItems = () => {
             />
           </div>
           <div>
-            <input type="text" name="quantity" placeholder="quantity" />
+            <input type="number" name="quantity" placeholder="quantity" />
           </div>
           <div>
-            <input type="text" name="price" placeholder="price" />
+            <input type="number" name="price" placeholder="price" />
           </div>
           <div>
             <input type="text" name="img" placeholder="image-link" />

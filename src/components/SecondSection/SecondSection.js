@@ -3,7 +3,7 @@ import { AiOutlineArrowRight } from 'react-icons/ai';
 import "./SecondSection.css";
 const SecondSection = () => {
   return (
-    <div className="subscribe-page">
+    <div className="subscribe-page mb-3">
       <div>
         <h1>Subscribe Newsletter</h1>
         <p>

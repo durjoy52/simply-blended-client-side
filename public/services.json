@@ -1,0 +1,50 @@
+[
+  {
+    "name": "MintLeaves juice",
+    "description": "Mint leaves can do more than adding flavour to your food. ",
+    "price": 23,
+    "img": "https://i.ibb.co/6ymv7p4/pexels-artem-beliaikin-1322144.png",
+    "supplierName": "habibullah",
+    "quantity": 12
+  },
+  {
+    "name": "Watermelon juice",
+    "description": "Vitamins A and C, which are found in watermelon, are important for skin health. ",
+    "price": 14,
+    "img": "https://i.ibb.co/z8c4yZr/pexels-bruno-scramgnon-1337825.png",
+    "supplierName": "abu",
+    "quantity": 9
+  },
+  {
+    "name": "LimeKiwi juice",
+    "description": "Kiwi Crunch! Combine sliced kiwi with bananas, grapes, yogurt and citrus juice. ",
+    "price": 35,
+    "img": "https://i.ibb.co/RDpxW2T/pexels-caleb-oquendo-3038241.png",
+    "supplierName": "duronto",
+    "quantity": 19
+  },
+  {
+    "name": "Mango juice",
+    "description": "You can eat mangoes and drink mango nectar juice anytime throughout the day.",
+    "price": 19,
+    "img": "https://i.ibb.co/t2Bj8wg/pexels-timur-weber-8679358.png",
+    "supplierName": "ponkoj",
+    "quantity": 27
+  },
+  {
+    "name": "Lemon juice",
+    "description": " Lemons are a good source of Vitamin C",
+    "price": 22,
+    "img": "https://i.ibb.co/wSs0FrN/pexels-timur-weber-8679352.png",
+    "supplierName": "provat",
+    "quantity": 16
+  },
+  {
+    "name": "orange juice",
+    "description": "Oranges are positively packed with vitamin C, which helps your body synthesize collagen",
+    "price": 10,
+    "img": "https://i.ibb.co/px6qdzm/pexels-markus-spiske-115832.png",
+    "supplierName": "pasha",
+    "quantity": 6
+  }
+]

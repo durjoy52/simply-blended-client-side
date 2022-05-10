@@ -25,6 +25,7 @@ const ManageItem = () => {
             background: "indianred",
             borderRadius: "3px",
             padding: "4px 8px",
+            margin:'4px',
             color: "white",
             border: "none",
           }}
@@ -33,7 +34,7 @@ const ManageItem = () => {
           Add Item <MdAddCircleOutline />
         </button>
       </div>
-      <div className="d-flex justify-content-between align-items-center">
+      <div className="d-flex flex-md-row flex-column-reverse justify-content-between align-items-center gap-2">
         <div className="addItem">
           <form>
             <input
@@ -49,7 +50,7 @@ const ManageItem = () => {
             />
           </form>
         </div>
-        <div>
+        <div className="d-flex justify-content-center align-items-center">
           <Card className="card">
             <Card.Img variant="top" src={img} />
             <Card.Body>
@@ -57,7 +58,7 @@ const ManageItem = () => {
               <span>Supplier: {supplierName}</span>
               <p>Price: {price}</p>
               <span>{description}</span>
-              <p>Quantity: {quantity < 1 ? <span className="text-danger">Sold</span> : quantity}</p>
+              <p className="text-warning fw-bold">Quantity: {quantity < 1 ? <span className="text-danger">Sold</span> : quantity}</p>
               <button className="d-block card-btn">
                 Deliver <AiOutlineDeliveredProcedure />
               </button>
