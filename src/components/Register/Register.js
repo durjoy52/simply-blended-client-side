@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Register = () => {
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -15,51 +13,33 @@ const Register = () => {
   }
 
   return (
-    <div className="Login">
+    <div className="container mt-3 ">
           <SocialLogin></SocialLogin>
-      <Form onSubmit={handleRegister}>
-        <Form.Group size="lg" controlId="name">
-          <Form.Label>Name</Form.Label>
-          <Form.Control
-            type="name"
-            onBlur={(e) => setName(e.target.value)}
-            placeholder="name"
-            required
-          ></Form.Control>
-        </Form.Group>
-        <Form.Group size="lg" controlId="email">
-          <Form.Label>Email</Form.Label>
-          <Form.Control
-            autoFocus
-            type="email"
-            onBlur={(e) => setEmail(e.target.value)}
-            placeholder="email"
-            required
-          />
-        </Form.Group>
-        <Form.Group size="lg" controlId="password">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            onBlur={(e) => setPassword(e.target.value)}
-            placeholder="password"
-            required
-          />
-        </Form.Group>
-        <Form.Group size="lg" controlId="confirmPassword">
-          <Form.Label>confirm password</Form.Label>
-          <Form.Control
-            type="confirmPassword"
-            onBlur={(e) => setConfirmPassword(e.target.value)}
-            placeholder="confirm password"
-            required
-          />
-        </Form.Group>
-        <Button block size="lg" type="submit" className="my-2">
-          SignUp
-        </Button>
+          <div className="addItemField">
+      <div className="addItem">
+        <h3>Please Register !</h3>
+        <form>
+          <div>
+            <input
+              type="email"
+              name="email"
+              placeholder="email"
+              required
+            />
+          </div>
+          <div>
+            <input type="password" name="password" placeholder="password" required/>
+          </div>
+          <div>
+            <input type="password" name="ConfirmPassword" placeholder="ConfirmPassword" required/>
+          </div>
+          <div>
+            <input style={{background:'indianred',color:'white'}} type="submit" value="Add Item" />
+          </div>
       <p>Already have an account ? <Link to='/login'>Login</Link></p>
-      </Form>
+        </form>
+      </div>
+    </div>
     </div>
   );
 };

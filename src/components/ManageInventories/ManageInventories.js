@@ -1,5 +1,6 @@
 import React from "react";
 import { Table } from "react-bootstrap";
+import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import useProduct from "../useProduct/useProduct";
 import "./ManageInventories.css";
@@ -9,13 +10,14 @@ const ManageInventories = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure to delete this item?");
     if (proceed) {
-      fetch(`http://localhost:5000/product/${id}`, {
+      fetch(`http://localhost:5000/products/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
         .then((data) => {
          const remaining = products.filter(product => product._id !== id)
          setProducts(remaining)
+         toast.success('delete successful')
         });
     }
   };

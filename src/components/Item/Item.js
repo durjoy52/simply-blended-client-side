@@ -13,7 +13,7 @@ const Item = ({ product }) => {
         <Card.Body>
           <Card.Title>Name: {name}</Card.Title>
           <span>Supplier: {supplierName}</span>
-          <p>Price: {price}</p>
+          <p>Price: ${price}</p>
           <span>{description}</span>
             <p>Quantity: {quantity}</p>
           <button onClick={()=>navigate(`/manageItem/${_id}`)} className="d-block card-btn">Update <GrUpdate/></button>
