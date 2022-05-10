@@ -1,11 +1,17 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
 import useProduct from '../useProduct/useProduct';
-
+import './ManageInventories.css';
 const ManageInventories = () => {
+    const handleUpdate = id =>{
+
+    }
+    const handleDelete = id =>{
+
+    }
     const [products] = useProduct()
     return (
-        <div className='container mt-3'>
+        <div className='container mt-3 inventories-section'>
             <Table striped bordered hover size="sm">
   <thead>
     <tr>
@@ -28,8 +34,8 @@ const ManageInventories = () => {
           <td>{product.description}</td>
           <td>${product.price}</td>
           <td>{product.quantity}</td>
-          <td><button>Update</button></td>
-          <td><button>Delete</button></td>
+          <td><button onClick={handleUpdate(product._id)} className='btn btn-success'>Update</button></td>
+          <td><button onClick={handleDelete(product._id)} className='btn btn-danger'>Delete</button></td>
         </tr>
       </tbody>)
   }

@@ -1,0 +1,25 @@
+.addItemField {
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addItem {
+  max-width: 550px;
+  width: 100%;
+}
+.addItem form input {
+  width: 100%;
+  margin-top: 5px;
+  height: 3rem;
+  padding-left: 5px;
+  border-radius: 9px;
+  border: 1px solid #f0b5af;
+  outline: none;
+}
+
+input:focus {
+  border: #fab7af;
+  box-shadow: 0 0 5px 0 #f8afa6;
+}

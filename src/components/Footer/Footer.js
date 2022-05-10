@@ -7,7 +7,7 @@ import payment from '../../images/logo/payment-img.png';
 import './Footer.css';
 const Footer = () => {
     return (
-        <footer className="footer mt-4">
+        <footer className="footer mt-4" >
 
         <div className="footer-top">
           <div className="container">

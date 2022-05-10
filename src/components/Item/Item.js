@@ -1,8 +1,11 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+import { GrUpdate } from 'react-icons/gr';
+import { useNavigate } from "react-router-dom";
 import './Item.css';
 const Item = ({ product }) => {
-  const { name, price, quantity, img, description, supplierName } = product;
+    const navigate = useNavigate()
+  const { _id,name, price, quantity, img, description, supplierName } = product;
   return (
     <div className="col-md-6 col-lg-4 d-flex justify-content-center">
       <Card className="card">
@@ -13,7 +16,7 @@ const Item = ({ product }) => {
           <p>Price: {price}</p>
           <span>{description}</span>
             <p>Quantity: {quantity}</p>
-          <button className="d-block">Go somewhere</button>
+          <button onClick={()=>navigate(`/manageItem/${_id}`)} className="d-block card-btn">Update <GrUpdate/></button>
         </Card.Body>
       </Card>
     </div>

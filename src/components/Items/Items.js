@@ -1,4 +1,5 @@
 import React from 'react';
+import { MdManageSearch } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 import Item from '../Item/Item';
 import useProduct from '../useProduct/useProduct';
@@ -13,7 +14,7 @@ const Items = () => {
                 products.slice(0,6).map(product =><Item key={product._id} product={product}></Item>)
             }
             <div className="d-flex justify-content-end">
-            <button onClick={()=>navigate('/manage')}>Manage Inventories</button>
+            <button onClick={()=>navigate('/manage')} className='manage-btn'>Manage Inventories <MdManageSearch/></button>
             </div>
         </div>
         </div>

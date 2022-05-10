@@ -20,8 +20,8 @@ const Header = () => {
     </Nav>
     <Nav>
       <Nav.Link as={CustomLink} to="/login"><BiLogInCircle/>Login</Nav.Link>
-      <Nav.Link as={CustomLink}  to="/memes">
-        Dank memes
+      <Nav.Link as={CustomLink}  to="/blogs">
+        Blogs
       </Nav.Link>
     </Nav>
   </Navbar.Collapse>
