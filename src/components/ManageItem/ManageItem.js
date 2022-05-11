@@ -16,42 +16,42 @@ const ManageItem = () => {
       const { data } = await axios.get(url);
       setService(data.data);
     })();
-  }, [id]);
-  const {img, name, supplierName, price, description, quantity } = service;
+  }, [id, service]);
+  const { img, name, supplierName, price, description, quantity } = service;
   const handleStockUpdate = (event) => {
     event.preventDefault();
- 
-            const newStock = event.target.quantity.value
-           fetch(`http://localhost:5000/product/${id}`,{
-            method:'PUT',
-            headers:{
-                'content-type':'application/json'
-            },
-            body:JSON.stringify({quantity: quantity + parseInt(newStock)})
-        })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-            toast.success('Stock Updated successfully')
-            event.target.reset()
-        })
-        }
-;
 
-const handleDelivered = async() =>{
-  fetch(`http://localhost:5000/product/${id}`,{
-   method:'PUT',
-   headers:{
-       'content-type':'application/json'
-   },
-   body:await JSON.stringify({quantity: quantity - 1})
-})
-.then(res => res.json())
-.then(data => {
-   console.log(data)
-   toast.success('Item delivered')
-})
-}
+    const newStock = event.target.quantity.value;
+    fetch(`http://localhost:5000/product/${id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ quantity: quantity + parseInt(newStock) }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        toast.success("Stock Updated successfully");
+        event.target.reset();
+      });
+  };
+  const handleDelivered = () => {
+    fetch(`http://localhost:5000/product/${id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ quantity: quantity - 1 }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (quantity < 1) {
+          return toast.error("No item to deliver",{id:'error'});
+        } else toast.success("Item delivered");
+      });
+  };
 
   return (
     <div className="container my-3" style={{ minHeight: "50vh" }}>

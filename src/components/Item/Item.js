@@ -15,7 +15,14 @@ const Item = ({ product }) => {
           <span>Supplier: {supplierName}</span>
           <p>Price: ${price}</p>
           <span>{description}</span>
-            <p>Quantity: {quantity}</p>
+          <p className="text-warning fw-bold">
+                Quantity:{" "}
+                {quantity < 1 ? (
+                  <span className="text-danger">Sold</span>
+                ) : (
+                  quantity
+                )}
+              </p>
           <button onClick={()=>navigate(`/manageItem/${_id}`)} className="d-block card-btn">Update <GrUpdate/></button>
         </Card.Body>
       </Card>
