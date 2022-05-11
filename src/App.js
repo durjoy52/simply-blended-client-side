@@ -11,6 +11,7 @@ import ManageInventories from './components/ManageInventories/ManageInventories'
 import ManageItem from './components/ManageItem/ManageItem';
 import NotFound from './components/NotFound/NotFound';
 import Register from './components/Register/Register';
+import RequireAuth from './components/RequireAuth/RequireAuth';
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
 <Route path='/home' element={<Home></Home>}></Route>
 <Route path='/manage' element={<ManageInventories></ManageInventories>}></Route>
 <Route path='/add' element={<AddItems></AddItems>}></Route>
-<Route path='/manageitem/:id' element={<ManageItem></ManageItem>}></Route>
+<Route path='/manageitem/:id' element={<RequireAuth><ManageItem></ManageItem></RequireAuth>}></Route>
 <Route path='/blogs' element={<Blogs></Blogs>}></Route>
 <Route path='/login' element={<Login></Login>}></Route>
 <Route path='/register' element={<Register></Register>}></Route>

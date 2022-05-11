@@ -1,20 +1,10 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
 const Login = () => {
-    const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    const user ={email,password}
-    event.target.reset()
-  }
-
   return (
     <div className="container mt-3">
         <SocialLogin></SocialLogin>
-        <div className=" addItemField">
+        <div className="addItemField">
       <div className="addItem">
         <h3>Please Login !</h3>
         <form>
