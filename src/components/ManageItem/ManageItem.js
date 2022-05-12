@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import toast from "react-hot-toast";
 import { AiOutlineDeliveredProcedure } from "react-icons/ai";
-import { MdAddCircleOutline } from "react-icons/md";
 import { useNavigate, useParams } from "react-router-dom";
 const ManageItem = () => {
   const navigate = useNavigate();
@@ -55,21 +54,6 @@ const ManageItem = () => {
 
   return (
     <div className="container my-3" style={{ minHeight: "50vh" }}>
-      <div className="d-flex justify-content-center align-items-center ">
-        <button
-          style={{
-            background: "indianred",
-            borderRadius: "3px",
-            padding: "4px 8px",
-            margin: "4px",
-            color: "white",
-            border: "none",
-          }}
-          onClick={() => navigate("/add")}
-        >
-          Add Item <MdAddCircleOutline />
-        </button>
-      </div>
       <div className="d-flex flex-md-row flex-column-reverse justify-content-between align-items-center gap-2">
         <div className="addItem">
           <form onSubmit={handleStockUpdate}>
@@ -91,6 +75,7 @@ const ManageItem = () => {
             <Card.Img variant="top" src={img} />
             <Card.Body>
               <Card.Title>Name: {name}</Card.Title>
+              <p><small>id: {id}</small></p>
               <span>Supplier: {supplierName}</span>
               <p>Price: {price}</p>
               <span>{description}</span>

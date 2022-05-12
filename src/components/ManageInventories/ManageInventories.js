@@ -1,11 +1,12 @@
 import React from "react";
 import { Table } from "react-bootstrap";
 import toast from "react-hot-toast";
+import { MdAddCircleOutline } from 'react-icons/md';
 import { useNavigate } from "react-router-dom";
-import useProduct from "../useProduct/useProduct";
+import useProducts from "../../hooks/useProducts/useProducts";
 import "./ManageInventories.css";
 const ManageInventories = () => {
-  const [products, setProducts] = useProduct();
+  const [products, setProducts] = useProducts();
   const navigate = useNavigate()
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure to delete this item?");
@@ -24,7 +25,23 @@ const ManageInventories = () => {
   };
 
   return (
-    <div className="container mt-3 inventories-section">
+    <div className="container mt-3">
+       <div className="d-flex justify-content-center align-items-center ">
+        <button
+          style={{
+            background: "indianred",
+            borderRadius: "3px",
+            padding: "4px 8px",
+            margin: "4px",
+            color: "white",
+            border: "none",
+          }}
+          onClick={() => navigate("/add")}
+        >
+          Add New Item <MdAddCircleOutline />
+        </button>
+      </div>
+      <div className=" inventories-section overflow-auto">
       <Table striped bordered hover size="sm">
         <thead>
           <tr>
@@ -69,6 +86,8 @@ const ManageInventories = () => {
         ))}
       </Table>
     </div>
+    </div>
+    
   );
 };
 
