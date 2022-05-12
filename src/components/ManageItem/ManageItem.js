@@ -29,7 +29,6 @@ const ManageItem = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         toast.success("Stock Updated successfully");
         event.target.reset();
       });

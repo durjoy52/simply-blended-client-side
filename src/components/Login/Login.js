@@ -1,32 +1,49 @@
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useState } from "react";
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { auth } from "../../firebase/firebase.init";
 import Loading from "../Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
 const Login = () => {
+  const [email,setEmail] = useState('')
+  const [password,setPassword] = useState('')
   const navigate = useNavigate()
   const location = useLocation()
   const from = location.state?.from?.pathname || '/'
+  const [sendPasswordResetEmail, sending, error] = useSendPasswordResetEmail(
+    auth
+  );
+
   const [
     signInWithEmailAndPassword,
     user,
     loading,
-    error,
+    error1,
   ] = useSignInWithEmailAndPassword(auth);
-  if (error) {
-    return toast.error(error)
+
+  const passwordReset = () =>{
+    if(email){
+      sendPasswordResetEmail(email)
+      toast('sent password Reset')
+    }else {
+      toast.error("please enter your email address", { id: "error" });
+    }
   }
-  if (loading) {
+  if (loading || sending) {
     return <Loading/>
+  }
+  if (error) { 
+    toast.error(error.message,{id:'error'})
+  }
+  if (error1) { 
+    toast.error(error1.message,{id:'error1'})
   }
   if (user) {
     navigate(from,{replace:true})
   }
   const handleLogin = event =>{
     event.preventDefault()
-    const email = event.target.email.value
-    const password = event.target.password.value;
     signInWithEmailAndPassword(email,password)
   }
   return (
@@ -37,7 +54,7 @@ const Login = () => {
         <h3>Please Login !</h3>
         <form onSubmit={handleLogin}>
           <div>
-            <input
+            <input onBlur={(e)=> setEmail(e.target.value)}
               type="email"
               name="email"
               placeholder="email"
@@ -45,9 +62,10 @@ const Login = () => {
             />
           </div>
           <div>
-            <input type="password" name="password" placeholder="password" />
+            <input onBlur={(e)=>setPassword(e.target.value)} type="password" name="password" placeholder="password" />
           </div>
           <div>
+            <span>Forget password?</span><button className="btn btn-link" onClick={passwordReset}>reset password</button>
             <input style={{background:'indianred',color:'white'}} type="submit" value="Login" />
           </div>
       <p>Don't have an account ? <Link to='/register'>Register</Link></p>
