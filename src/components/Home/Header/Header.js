@@ -27,7 +27,7 @@ const Header = () => {
       {
         user ?
            <>
-           <img className='photoUrl' src={user?.photoURL} alt="" />
+           <img className='photoUrl' src={user?.photoURL && user.photoURL} alt={user.photoURL || user.displayName} />
          <NavDropdown id="collasible-nav-dropdown">
          <NavDropdown.Item as={CustomLink} to='/add'>Add Item</NavDropdown.Item>
          <NavDropdown.Item as={CustomLink} to='/manage'>Manage Item</NavDropdown.Item>

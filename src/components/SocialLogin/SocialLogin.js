@@ -8,7 +8,7 @@ import './SocialLogin.css';
 const SocialLogin = () => {
   const navigate = useNavigate();
   const location = useLocation()
-  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth,{sendEmailVerification:true});
   const from = location.state?.from?.pathname || "/";
 
   let errorElement

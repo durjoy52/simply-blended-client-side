@@ -3,9 +3,8 @@ import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import toast from "react-hot-toast";
 import { AiOutlineDeliveredProcedure } from "react-icons/ai";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 const ManageItem = () => {
-  const navigate = useNavigate();
   const { id } = useParams();
   const [service, setService] = useState({});
 

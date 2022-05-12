@@ -9,7 +9,7 @@ const RequireAuth = ({ children }) => {
     let location = useLocation();
     const [user, loading] = useAuthState(auth);
     
-    if(!user.emailVerified){
+    if(!user?.emailVerified){
       return <EmailVerification/>
     }
   if(loading){
