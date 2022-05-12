@@ -26,7 +26,7 @@ const ManageItem = () => {
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify({ quantity: quantity + parseInt(newStock) }),
+      body: JSON.stringify({ quantity: parseInt(quantity) + parseInt(newStock) }),
     })
       .then((res) => res.json())
       .then((data) => {
