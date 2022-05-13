@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
@@ -42,9 +43,11 @@ const Login = () => {
   if (user) {
     navigate(from,{replace:true})
   }
-  const handleLogin = event =>{
+  const handleLogin =async event =>{
     event.preventDefault()
-    signInWithEmailAndPassword(email,password)
+   await signInWithEmailAndPassword(email,password)
+    const {data} = await axios.post('http://localhost:5000/login',{email})
+    localStorage.setItem('accessToken',data)
   }
   return (
     <div className="container mt-3">

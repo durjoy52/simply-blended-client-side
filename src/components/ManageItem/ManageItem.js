@@ -43,7 +43,6 @@ const ManageItem = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (quantity < 1) {
           return toast.error("No item to deliver",{id:'error'});
         } else toast.success("Item delivered");

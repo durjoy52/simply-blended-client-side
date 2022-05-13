@@ -10,7 +10,11 @@ const MyItems = () => {
   const [myItems, setMyItems] = useState([]);
   useEffect(() => {
     (async () => {
-      await fetch(`http://localhost:5000/myItems?email=${user?.email}`)
+      await fetch(`http://localhost:5000/myItems?email=${user?.email}`,{
+        headers:{
+          authorization:`Bearer ${localStorage.getItem('accessToken')}`
+        }
+      })
         .then((res) => res.json())
         .then((data) => {
           setMyItems(data);
