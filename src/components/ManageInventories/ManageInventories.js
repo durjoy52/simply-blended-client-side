@@ -1,6 +1,8 @@
 import React from "react";
 import { Table } from "react-bootstrap";
 import toast from "react-hot-toast";
+import { AiFillDelete } from 'react-icons/ai';
+import { GrUpdate } from 'react-icons/gr';
 import { MdAddCircleOutline } from 'react-icons/md';
 import { useNavigate } from "react-router-dom";
 import useProducts from "../../hooks/useProducts/useProducts";
@@ -71,13 +73,13 @@ const ManageInventories = () => {
               <td>${product.price}</td>
               <td>{product.quantity}</td>
               <td>
-                <button onClick={()=>navigate(`/manageitem/${product._id}`)} className="btn btn-success">Update</button>
+                <button onClick={()=>navigate(`/manageitem/${product._id}`)} className="btn btn-success"><GrUpdate/>Update</button>
               </td>
               <td>
                 <button
                   onClick={() => handleDelete(product._id)}
                   className="btn btn-danger"
-                >
+                ><AiFillDelete/>
                   Delete
                 </button>
               </td>
