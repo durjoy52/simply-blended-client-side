@@ -6,7 +6,7 @@ const useProduct = () => {
     const [products,setProducts] = useState([])
     useEffect(()=>{
        (async()=>{
-        const {data} = await axios.get('http://localhost:5000/products')
+        const {data} = await axios.get('https://evening-mesa-58076.herokuapp.com/products')
         if(!data?.success){
             return toast.error(data?.error,{id:'error'})
         }

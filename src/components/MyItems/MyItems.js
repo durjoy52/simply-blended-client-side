@@ -21,7 +21,7 @@ const MyItems = () => {
         return toast.error(error.message, { id: "err" });
       }
       try {
-        const {data} =await axiosPrivate.get(`http://localhost:5000/myItems?email=${user?.email}`)
+        const {data} =await axiosPrivate.get(`https://evening-mesa-58076.herokuapp.com/myItems?email=${user?.email}`)
         setMyItems(data);
       } catch (error) {
         console.log(error.message);
@@ -36,7 +36,7 @@ const MyItems = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure to delete this item?");
     if (proceed) {
-      fetch(`http://localhost:5000/products/${id}`, {
+      fetch(`https://evening-mesa-58076.herokuapp.com/products/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

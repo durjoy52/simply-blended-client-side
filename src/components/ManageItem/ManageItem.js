@@ -10,7 +10,7 @@ const ManageItem = () => {
 
   useEffect(() => {
     (async () => {
-      const url = `http://localhost:5000/products/${id}`;
+      const url = `https://evening-mesa-58076.herokuapp.com/products/${id}`;
       const { data } = await axios.get(url);
       setService(data.data);
     })();
@@ -20,7 +20,7 @@ const ManageItem = () => {
     event.preventDefault();
 
     const newStock = event.target.quantity.value;
-    fetch(`http://localhost:5000/product/${id}`, {
+    fetch(`https://evening-mesa-58076.herokuapp.com/product/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -34,7 +34,7 @@ const ManageItem = () => {
       });
   };
   const handleDelivered = () => {
-    fetch(`http://localhost:5000/product/${id}`, {
+    fetch(`https://evening-mesa-58076.herokuapp.com/product/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

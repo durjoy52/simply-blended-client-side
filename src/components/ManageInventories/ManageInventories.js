@@ -11,7 +11,7 @@ const ManageInventories = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure to delete this item?");
     if (proceed) {
-      fetch(`http://localhost:5000/products/${id}`, {
+      fetch(`https://evening-mesa-58076.herokuapp.com/products/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

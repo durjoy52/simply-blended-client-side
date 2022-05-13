@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useState } from "react";
 import {
   useSendPasswordResetEmail,
@@ -7,6 +6,7 @@ import {
 import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { auth } from "../../firebase/firebase.init";
+import useToken from "../../hooks/useToken";
 import Loading from "../Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
 const Login = () => {
@@ -20,6 +20,7 @@ const Login = () => {
 
   const [signInWithEmailAndPassword, user, loading, error1] =
     useSignInWithEmailAndPassword(auth);
+    const [token] = useToken(user);
 
   if (loading || sending) {
     return <Loading />;
@@ -30,14 +31,12 @@ const Login = () => {
   if (error1) {
     toast.error(error1.message, { id: "error1" });
   }
-  if (user) {
+  if (token) {
     navigate(from, { replace: true });
   }
-  const handleLogin = async (event) => {
+  const handleLogin =async (event) => {
     event.preventDefault();
     await signInWithEmailAndPassword(email, password);
-    const { data } = await axios.post("http://localhost:5000/login", { email });
-    localStorage.setItem("accessToken", data);
   };
   const passwordReset = () => {
     if (email) {

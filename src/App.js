@@ -1,6 +1,7 @@
 
 import { Toaster } from 'react-hot-toast';
 import { Route, Routes } from 'react-router-dom';
+import AboutUs from './components/AboutUs/AboutUs';
 import AddItems from './components/AddItems/AddItems';
 import Blogs from './components/Blogs/Blogs';
 import Footer from './components/Footer/Footer';
@@ -29,6 +30,7 @@ function App() {
 <Route path='/blogs' element={<Blogs></Blogs>}></Route>
 <Route path='/login' element={<Login></Login>}></Route>
 <Route path='/register' element={<Register></Register>}></Route>
+<Route path='/about' element={<AboutUs></AboutUs>}></Route>
 <Route path='*' element={<NotFound></NotFound>}></Route>
 </Routes>
 <Footer></Footer>

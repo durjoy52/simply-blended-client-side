@@ -24,7 +24,7 @@ const AddItems = () => {
     const user = {email, name, supplierName, description, quantity, price, img };
     event.target.reset()
 
-    const { data } = await axios.post("http://localhost:5000/products", user);
+    const { data } = await axios.post("https://evening-mesa-58076.herokuapp.com/products", user);
     if(data) return toast.success('Item added')
   };
   const handleEmail = event =>{

@@ -13,4 +13,8 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  background-image: url("https://cdn3.iconfinder.com/data/icons/e-commerce-8/91/account-512.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }

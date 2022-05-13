@@ -31,7 +31,7 @@ const Header = () => {
       {
         user ?
            <>
-           <img className='photoUrl' src={user?.photoURL} alt='' />
+           <img className='photoUrl' src={user?.photoURL} alt={user.photoURL && user.photoURL.slice(0,1)} />
          <NavDropdown id="collasible-nav-dropdown">
          <NavDropdown.Item as={CustomLink} to='/add'>Add Item</NavDropdown.Item>
          <NavDropdown.Item as={CustomLink} to='/manage'>Manage Item</NavDropdown.Item>
@@ -45,6 +45,9 @@ const Header = () => {
       }
       <Nav.Link as={CustomLink}  to="/blogs">
         Blogs
+      </Nav.Link>
+      <Nav.Link as={CustomLink}  to="/about">
+        About Us
       </Nav.Link>
     </Nav>
   </Navbar.Collapse>

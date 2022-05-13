@@ -3,6 +3,7 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from "react-fireb
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../../firebase/firebase.init";
+import useToken from "../../hooks/useToken";
 import Loading from "../Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
@@ -19,13 +20,14 @@ const Register = () => {
     loading,
     error1,
   ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true});
+  const [token] = useToken(user)
   if(loading || updating){
     return <Loading/>
   }
   if(error || error1){
      toast.error(error.message,{id:'error'})
   }
-  if(user){
+  if(token){
     navigate('/home')
   }
   const handleCreateUser = async(event) =>{
