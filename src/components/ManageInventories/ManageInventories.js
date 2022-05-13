@@ -70,8 +70,15 @@ const ManageInventories = () => {
               <td>{product.name}</td>
               <td>{product.supplierName}</td>
               <td>{product.description}</td>
-              <td>${product.price}</td>
-              <td>{product.quantity}</td>
+              <td>$ {product.price}</td>
+              <td className="text-warning fw-bold">
+                Quantity:{" "}
+                {product.quantity < 1 ? (
+                  <span className="text-danger">Sold</span>
+                ) : (
+                  product.quantity
+                )}
+              </td>
               <td>
                 <button onClick={()=>navigate(`/manageitem/${product._id}`)} className="btn btn-success"><GrUpdate/>Update</button>
               </td>
