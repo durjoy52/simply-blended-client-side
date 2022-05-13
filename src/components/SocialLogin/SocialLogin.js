@@ -11,13 +11,13 @@ const SocialLogin = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth,{sendEmailVerification:true});
   const from = location.state?.from?.pathname || "/";
 
+  if(loading){
+    return <Loading></Loading>
+  }
   let errorElement
   if (error) {
     errorElement = <p className="text-danger text-center">Error: {error.message}</p>
   }
-if(loading){
-  return <Loading></Loading>
-}
   if (user) {
     navigate(from, { replace: true });
   }

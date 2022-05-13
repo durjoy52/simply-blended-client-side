@@ -3,10 +3,14 @@ import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
 import { auth } from "../../firebase/firebase.init";
+import Loading from "../Loading/Loading";
 import "./AddItem.css";
 const AddItems = () => {
-  const [user] = useAuthState(auth)
+  const [user,loading] = useAuthState(auth)
   const [userEmail,setUserEmail] = useState({email:user.email})
+  if(loading){
+    return <Loading/>
+  }
   const handleOnSubmit = async (event) => {
     event.preventDefault();
     const email = event.target.email.value

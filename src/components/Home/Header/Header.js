@@ -7,9 +7,13 @@ import { IoMdAddCircleOutline } from 'react-icons/io';
 import { auth } from '../../../firebase/firebase.init';
 import logo from '../../../images/logo/logo.png';
 import CustomLink from '../../CustomLink/CustomLink';
+import Loading from '../../Loading/Loading';
 import './Header.css';
 const Header = () => {
-  const [user] = useAuthState(auth);
+  const [user,loading] = useAuthState(auth);
+  if(loading){
+    return <Loading/>
+  }
     return (
         <div>
                   <Navbar sticky="top" collapseOnSelect expand="lg"

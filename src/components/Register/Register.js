@@ -19,11 +19,11 @@ const Register = () => {
     loading,
     error1,
   ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true});
-  if(error || error1){
-     toast.error(error.message,{id:'error'})
-  }
   if(loading || updating){
     return <Loading/>
+  }
+  if(error || error1){
+     toast.error(error.message,{id:'error'})
   }
   if(user){
     navigate('/home')
